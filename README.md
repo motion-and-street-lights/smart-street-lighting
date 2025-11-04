@@ -94,7 +94,7 @@ This dual-condition approach ensures the lighting system only activates when tru
 
 ## Code
 
-cpp
+```cpp
 int LDR = A0; // Light sensor pin
 int PIR = 2;  // PIR sensor pin
 int LED = 9;  // LED output pin
@@ -127,7 +127,7 @@ void loop() {
   
   delay(500);
 }
-
+```
 
 ### Code Explanation
 
@@ -177,33 +177,6 @@ For practical deployment, consider:
 - Adding multiple sensors for broader coverage
 - Implementing wireless control (Bluetooth/WiFi modules)
 
-## Troubleshooting
-
-*LED doesn't turn on*
-- Check all wire connections
-- Verify power supply is connected
-- Test LED separately with a simple circuit
-
-*LED stays on constantly*
-- Adjust the light threshold value in code
-- Check PIR sensor positioning
-- Verify there's sufficient ambient light during testing
-
-*No Serial Monitor output*
-- Verify baud rate is set to 9600
-- Check USB connection
-- Try a different USB cable or port
-
-*PIR sensor not detecting motion*
-- Allow 30-60 seconds for sensor calibration after power-on
-- Check sensor range (typically 3-7 meters)
-- Adjust sensor sensitivity if available
-
-*Erratic behavior*
-- Check for loose connections
-- Verify power supply provides stable 5V
-- Add longer delays between readings
-
 ## Contributing
 
 Contributions are welcome. To contribute:
@@ -216,12 +189,3 @@ Contributions are welcome. To contribute:
 ## License
 
 This project is open source and available under the MIT License.
-
-## Contact
-
-For questions or suggestions, please open an issue in the repository.
-
-## Acknowledgments
-
-- Arduino community for documentation and support
-- Tinkercad for circuit simulation tools
