@@ -31,6 +31,7 @@ This project implements an energy-efficient automatic lighting system using Ardu
 
 ![WhatsApp Image 2025-11-04 at 12 29 34_58c4a854](https://github.com/user-attachments/assets/21bac282-ab28-4415-a738-ccf3f874c9b6)
 
+The circuit consists of three main components connected to the Arduino:
 
 *Pin Connections:*
 - *A0* - LDR (with 10kΩ pull-down resistor to GND)
@@ -142,22 +143,22 @@ void loop() {
 ### Adjust Light Threshold
 
 Change the darkness detection threshold (default: 700):
-cpp
+```cpp
 if (lightValue > 850) { // More sensitive to darkness
-
+```
 
 ### Modify Brightness Levels
 
-cpp
+```cpp
 analogWrite(LED, 200); // Adjust full brightness
 analogWrite(LED, 50);  // Adjust dim level
-
+```
 
 ### Change Update Frequency
 
-cpp
+```cpp
 delay(1000); // Update every 1 second instead of 500ms
-
+```
 
 ## Applications
 
@@ -176,6 +177,33 @@ For practical deployment, consider:
 - Using a relay module to control AC-powered bulbs
 - Adding multiple sensors for broader coverage
 - Implementing wireless control (Bluetooth/WiFi modules)
+
+## Troubleshooting
+
+*LED doesn't turn on*
+- Check all wire connections
+- Verify power supply is connected
+- Test LED separately with a simple circuit
+
+*LED stays on constantly*
+- Adjust the light threshold value in code
+- Check PIR sensor positioning
+- Verify there's sufficient ambient light during testing
+
+*No Serial Monitor output*
+- Verify baud rate is set to 9600
+- Check USB connection
+- Try a different USB cable or port
+
+*PIR sensor not detecting motion*
+- Allow 30-60 seconds for sensor calibration after power-on
+- Check sensor range (typically 3-7 meters)
+- Adjust sensor sensitivity if available
+
+*Erratic behavior*
+- Check for loose connections
+- Verify power supply provides stable 5V
+- Add longer delays between readings
 
 ## Contributing
 
